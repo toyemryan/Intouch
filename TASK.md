@@ -1,4 +1,4 @@
-#Lista funzioni app
+## Lista funzioni app
 - Creazione profilo utente
 - Modifica delle eventuali informazioni profilo(nome, cognome, bio, elenco interessi ecc.) e credenziali
 - Possibilità di eliminare il profilo
