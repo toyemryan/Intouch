@@ -9,14 +9,15 @@ class ActivityHelper {
 
     companion object {
 
-        fun setFullScreen(activity: AppCompatActivity){
+        fun setFullScreen(activity: AppCompatActivity) {
 
-            //Mostra a schermo intero l'activity
+            // Mostra a schermo intero l'activity
             WindowCompat.setDecorFitsSystemWindows(activity.window, false)
 
-            //Rende trasparente la status bar e la navigation bar
-            activity.window.statusBarColor = Color.TRANSPARENT // Set color of system statusBar same as ActionBar
-            activity.window.navigationBarColor =  SurfaceColors.SURFACE_2.getColor(activity)
+            // Rende trasparente la status bar e la navigation bar
+            activity.window.statusBarColor =
+                Color.TRANSPARENT // Set color of system statusBar same as ActionBar
+            activity.window.navigationBarColor = SurfaceColors.SURFACE_2.getColor(activity)
         }
     }
 }

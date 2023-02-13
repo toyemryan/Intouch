@@ -1,4 +1,4 @@
-package com.diegusmich.intouch.ui.dashboard
+package com.diegusmich.intouch.ui.myevents
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.diegusmich.intouch.databinding.FragmentDashboardBinding
+import com.diegusmich.intouch.databinding.FragmentMyEventsBinding
 
-class DashboardFragment : Fragment() {
+class MyEventsFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentMyEventsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val myEventsViewModel =
+            ViewModelProvider(this).get(MyEventsViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentMyEventsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        myEventsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
