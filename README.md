@@ -1,5 +1,5 @@
-# InTouch App
-Con InTouch hai la possibilità di creare attività da condividere con le persone che coltivano le tue stesse passioni! Nasce con lo scopo di abbattere le barriere della timidezza permettendoti di fare nuove amicizie!
+# Intouch App
+Con Intouch hai la possibilità di creare attività da condividere con le persone che coltivano le tue stesse passioni! Nasce con lo scopo di abbattere le barriere della timidezza permettendoti di fare nuove amicizie!
 
 > L'applicazione è parte del progetto del corso di Programmazione Mobile, Univpm.
 
