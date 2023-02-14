@@ -26,17 +26,17 @@
         <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
-
-        <!-- Font family -->
+        <item name="android:navigationBarColor">?colorSurfaceVariant</item>
+        <!-- Font family
         <item name="fontFamily">@font/googlesans</item>
-        <item name="android:fontFamily">@font/googlesans</item>
+        <item name="android:fontFamily">@font/googlesans</item>-->
 
         <!-- AppBar Material3 style -->
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
 
         <!-- Status bar and navigation bar custom theme for edge-to-edge app. -->
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!--<item name="android:navigationBarColor">@android:color/transparent</item>-->
 
         <!-- Light color of Status Bar for light background -->
         <item name="android:windowLightStatusBar">true</item>
@@ -48,6 +48,9 @@
     </style>
 
     <style name="TextAppearance.App.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
-        <item name="android:textSize">28dp</item>
+        <item name="android:textSize">30dp</item>
+        <item name="fontFamily">@font/lobster</item>
+        <item name="android:fontFamily">@font/lobster</item>
     </style>
+
 </resources>

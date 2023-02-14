@@ -12,11 +12,11 @@ class ActivityHelper {
         fun setFullScreen(activity: AppCompatActivity) {
 
             // Mostra a schermo intero l'activity
-            WindowCompat.setDecorFitsSystemWindows(activity.window, false)
+            WindowCompat.setDecorFitsSystemWindows(activity.window, true)
 
             // Rende trasparente la status bar e la navigation bar
-            activity.window.statusBarColor =
-                Color.TRANSPARENT // Set color of system statusBar same as ActionBar
+            //activity.window.statusBarColor = Color.TRANSPARENT
+            // Set color of system statusBar same as ActionBar
             activity.window.navigationBarColor = SurfaceColors.SURFACE_2.getColor(activity)
         }
     }

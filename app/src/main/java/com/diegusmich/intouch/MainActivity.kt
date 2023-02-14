@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.diegusmich.intouch.databinding.ActivityMainBinding
 import com.diegusmich.intouch.helpers.ActivityHelper
+import com.google.android.material.elevation.SurfaceColors
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,17 +21,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //Rende l'app edge-to-edge
+        //Simula la modalità edge-to-edge dell'app
         ActivityHelper.setFullScreen(this)
 
+        // Binding e setContentView
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(findViewById(R.id.topAppBar))
 
-        val navView: BottomNavigationView = binding.bottNavView
+        //setSupportActionBar(findViewById(R.id.topAppBar))
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+        //Inizializza il bottomNavView con il navcontroller dei Fragment
+        val bottNavView : BottomNavigationView = binding.bottNavView
+        val navController = findNavController(R.id.nav_host_fragment_container)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
@@ -39,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        //setupActionBarWithNavController(navController, appBarConfiguration)
+        bottNavView.setupWithNavController(navController)
     }
 }
