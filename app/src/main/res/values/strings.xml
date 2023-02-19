@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Intouch</string>
     <string name="title_home">Home</string>
-    <string name="title_my_events">Eventi</string>
-    <string name="title_profile">Profilo</string>
+    <string name="title_explore">Esplora</string>
+    <string name="title_create">Aggiungi</string>
     <string name="title_notifications">Notifiche</string>
+    <string name="title_profile">Profilo</string>
 </resources>

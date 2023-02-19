@@ -17,6 +17,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:labelVisibilityMode="unlabeled"
         app:itemIconSize="28dp"
+        app:itemRippleColor="@color/deep_purple_400_alpha_5"
+        app:elevation="3dp"
         app:menu="@menu/bottom_nav_menu" />
 
     <fragment

@@ -28,10 +28,6 @@ class MyEventsFragment : Fragment() {
         _binding = FragmentMyEventsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        myEventsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 
