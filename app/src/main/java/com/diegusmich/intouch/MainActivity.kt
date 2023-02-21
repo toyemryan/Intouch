@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         //Simula la modalità edge-to-edge dell'app
-        ActivityHelper.setFullScreen(this)
+        ActivityHelper.setWindowParams(this)
  
         // Binding e setContentView
         binding = ActivityMainBinding.inflate(layoutInflater)

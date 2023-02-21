@@ -1,10 +1,10 @@
-package com.diegusmich.intouch.ui.myevents
+package com.diegusmich.intouch.ui.events
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MyEventsViewModel : ViewModel() {
+class EventsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "My Events Fragment"

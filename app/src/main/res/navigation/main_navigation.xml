@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_my_events"
-        android:name="com.diegusmich.intouch.ui.myevents.MyEventsFragment"
-        android:label="@string/title_explore"
-        tools:layout="@layout/fragment_my_events" />
+        android:id="@+id/navigation_events"
+        android:name="com.diegusmich.intouch.ui.events.EventsFragment"
+        android:label="@string/title_events"
+        tools:layout="@layout/fragment_events" />
 
     <fragment
         android:id="@+id/navigation_notifications"
