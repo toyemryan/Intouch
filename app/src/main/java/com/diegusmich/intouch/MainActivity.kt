@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         // Imposta un comportamento differente per il tasto centrale del menu.
         // Lancia l'activity per creare un evento o un post!
         bottNavView.menu.getItem(2).setOnMenuItemClickListener {
-            Toast.makeText(this, "Launch create activity", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Launch: ${it.title} activity", Toast.LENGTH_SHORT).show()
             true
         }
     }
