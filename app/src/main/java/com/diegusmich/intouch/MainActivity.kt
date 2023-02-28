@@ -1,32 +1,26 @@
 package com.diegusmich.intouch
 
-import android.content.IntentFilter
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import android.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.diegusmich.intouch.databinding.ActivityMainBinding
-import com.diegusmich.intouch.helpers.ActivityHelper
-import com.google.android.material.elevation.SurfaceColors
+import com.diegusmich.intouch.util.ActivityUtil
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        //Simula la modalità edge-to-edge dell'app
-        ActivityHelper.setWindowParams(this)
+        ActivityUtil.setFullScreen(this)
  
         // Binding e setContentView
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -44,5 +38,27 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Launch: ${it.title} activity", Toast.LENGTH_SHORT).show()
             true
         }
+
+        auth = Firebase.auth
+    }
+
+    override fun onStart() {
+        super.onStart()
+        processAuth()
+    }
+
+    fun processAuth(){
+        if(auth.currentUser != null){
+            Snackbar.make(binding.root, "User already logged", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        auth.signInWithEmailAndPassword("test@intouchtest.com", "testtest")
+            .addOnCompleteListener(this) { task ->
+                if(task.isSuccessful && auth.currentUser != null)
+                    Snackbar.make(binding.root, "User ${auth.currentUser?.email.toString()}", Snackbar.LENGTH_LONG).show()
+                else
+                    Snackbar.make(binding.root, "User not logged", Toast.LENGTH_SHORT).show()
+            }
     }
 }
