@@ -1,14 +1,20 @@
 package com.diegusmich.intouch.ui.profile
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.diegusmich.intouch.data.model.User
+import com.diegusmich.intouch.data.repository.UserRepository
 
 class ProfileViewModel : ViewModel() {
+
+    private val userRepo = UserRepository()
+
+    private val _user = MutableLiveData<User>().apply {
+        value = User("Franco", "Franco")
+    }
 
     private val _text = MutableLiveData<String>().apply {
         value = "Profile Fragment!"
     }
-    val text: LiveData<String> = _text
 
+    val user : LiveData<User> = _user
 }

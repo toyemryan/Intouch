@@ -1,4 +1,4 @@
-package com.diegusmich.intouch.util
+package com.diegusmich.intouch.utils
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
