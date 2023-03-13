@@ -8,8 +8,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.diegusmich.intouch.databinding.ActivityMainBinding
 import com.diegusmich.intouch.domain.auth.PerformLoginEmailPassword
+import com.diegusmich.intouch.domain.auth.PerformLogout
+import com.diegusmich.intouch.exceptions.AppExceptionHandler
 import com.diegusmich.intouch.utils.ActivityUtil
-import com.diegusmich.intouch.utils.CoExHandler
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.FirebaseTooManyRequestsException
@@ -57,9 +58,9 @@ class MainActivity : AppCompatActivity() {
 
     fun processAuth() {
 
-        Firebase.auth.signOut()
+        val logout = PerformLogout()
 
-        MainScope().launch(CoExHandler.handler){
+        MainScope().launch(AppExceptionHandler.coroutineExThrower){
             var result : String?
 
             try{

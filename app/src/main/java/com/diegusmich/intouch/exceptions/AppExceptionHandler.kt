@@ -1,4 +1,4 @@
-package com.diegusmich.intouch.utils
+package com.diegusmich.intouch.exceptions
 
 import kotlinx.coroutines.CoroutineExceptionHandler
 
@@ -7,9 +7,10 @@ import kotlinx.coroutines.CoroutineExceptionHandler
  *
  * @since 0.2.0
  */
-class CoExHandler {
+class AppExceptionHandler{
+
     companion object{
-        val handler = CoroutineExceptionHandler { _, exception ->
+        val coroutineExThrower = CoroutineExceptionHandler{ _, exception ->
             throw exception
         }
     }
