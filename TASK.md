@@ -14,3 +14,8 @@
 - Feed principale di posts degli utenti amici o sconosciuti nelle vicinanze.
 - Ricerca di utenti tramite username
 - Ricerca di eventi per nome
+
+
+### Note 
+- Main Activity lancia la splashscreen e la fase di login/signup se l'utente non è loggato. La splashscreen dovrà chiudere una volta che l'app avrà caricato tutti i dati.
+- Per il logout utilizzare Intent con il flag FLAG_ACTIVITY_CLEAR_TASK (https://medium.com/swlh/truly-understand-tasks-and-back-stack-intent-flags-of-activity-2a137c401eca)
