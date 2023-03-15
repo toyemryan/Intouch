@@ -15,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Intouch.Theme.Material3"
         tools:targetApi="32">
+        <!--<activity
+            android:name="com.diegusmich.intouch.ui.auth.AuthActivity"
+            android:exported="false"
+            android:label="@string/title_activity_auth"
+            android:theme="@style/Intouch.Theme.Material3" />-->
         <activity
             android:name=".MainActivity"
             android:exported="true"
