@@ -9,6 +9,9 @@ import android.net.NetworkRequest
 import android.widget.Toast
 import com.diegusmich.intouch.R
 
+/**
+ * Deliver a companion object to observe a requested network from Connectivity Manager.
+ */
 class NetworkUtil{
 
     companion object{
@@ -18,6 +21,9 @@ class NetworkUtil{
         private lateinit var networkCallback : NetworkCallback
 
 
+        /**
+         * Build the entire service to observe a network.
+         */
         fun buildService(ctx : Activity) : Companion{
 
             //Get a connectivity manager API to observe network state
@@ -28,7 +34,9 @@ class NetworkUtil{
                 .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
                 .build()
 
-            //Register a callback to handle network state
+            /**
+             * Register a callback to handle network state.
+             */
             networkCallback = object : ConnectivityManager.NetworkCallback(){
 
 
@@ -47,6 +55,9 @@ class NetworkUtil{
             return Companion
         }
 
+        /**
+         * Start to observe the network connection.
+         */
         fun observe(){
             connectivityManager.requestNetwork(networkRequest, networkCallback)
         }
