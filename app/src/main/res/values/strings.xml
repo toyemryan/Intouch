@@ -7,8 +7,9 @@
     <string name="title_notifications">Notifiche</string>
     <string name="title_profile">Profilo</string>
     <!-- Internet connection -->
-    <string name="internet_offline">Sei offline, controlla la tua connessione.</string>
-    <string name="internet_return_online">Sei tornato online</string>
+    <string name="internet_offline">Connessione internet persa</string>
+    <string name="internet_online">Connesso a internet</string>
+    <string name="internet_task_offline">Non sei connesso. I dati saranno aggiornati quando tornerai online</string>
     <!--Login strings -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

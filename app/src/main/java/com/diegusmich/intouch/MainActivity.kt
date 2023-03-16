@@ -11,6 +11,7 @@ import com.diegusmich.intouch.domain.auth.PerformLoginEmailPassword
 import com.diegusmich.intouch.domain.auth.PerformLogout
 import com.diegusmich.intouch.exceptions.AppExceptionHandler
 import com.diegusmich.intouch.utils.ActivityUtil
+import com.diegusmich.intouch.utils.NetworkUtil
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.FirebaseTooManyRequestsException
@@ -29,8 +30,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         ActivityUtil.setFullScreen(this)
- 
+        NetworkUtil.buildService(this).observe()
+
         // Binding e setContentView
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -68,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                 result = "Utente autenticato"
             }
             catch (e : FirebaseNetworkException){
-                result = getString(R.string.internet_offline)
+                result = getString(R.string.internet_task_offline)
             }
             catch (e : FirebaseAuthInvalidCredentialsException){
                 result = getString(R.string.login_failed)
