@@ -7,12 +7,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.google.android.material.elevation.SurfaceColors
 
-open class ActivityUtil {
+
+/**
+ * Utility class for Activity
+ *
+ * @since 0.1.0
+ */
+class ActivityUtil {
     companion object {
+
+        /**
+         * Set edge-to-edge mode to activity
+         * @param activity to display in fullscreen mode
+         *
+         * @since 0.1.0
+         */
         fun setFullScreen(activity: Activity) {
-            // Forza la visualizzazione a finestra dell'activity
+            //Disable window-mode for activity
             WindowCompat.setDecorFitsSystemWindows(activity.window, false)
-            // Imposta il colore della NavigationBar con quello della BottomNavMenu
+            //Set the color of navigation bar and statusbar with Material Colors
             activity.window.navigationBarColor = SurfaceColors.SURFACE_2.getColor(activity)
             activity.window.statusBarColor = Color.TRANSPARENT
         }

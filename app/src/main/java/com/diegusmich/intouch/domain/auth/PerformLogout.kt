@@ -1,5 +1,6 @@
 package com.diegusmich.intouch.domain.auth
 
+import android.app.Activity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -9,16 +10,16 @@ import com.google.firebase.ktx.Firebase
  *
  * @since 0.2.0
  */
-sealed class PerformLogout() {
+class PerformLogout(){
 
     /**
      * Perform the logout of Firebase logged user.
+     * Relaunch the task stack
      *
-     * @throws FirebaseNetworkException
      * @since 0.2.0
      */
-    suspend operator fun invoke(callback : (() -> Unit)? = null){
+    operator fun invoke(ctx : Activity){
         Firebase.auth.signOut()
-        callback?.invoke()
+        ctx.finish()
     }
 }

@@ -11,6 +11,8 @@ import com.diegusmich.intouch.R
 
 /**
  * Deliver a companion object to observe a requested network from Connectivity Manager.
+ *
+ * @since 0.2.1
  */
 class NetworkUtil{
 
@@ -20,9 +22,11 @@ class NetworkUtil{
         private lateinit var networkRequest: NetworkRequest
         private lateinit var networkCallback : NetworkCallback
 
-
         /**
          * Build the entire service to observe a network.
+         *
+         * @param ctx context
+         * @since 0.2.1
          */
         fun buildService(ctx : Activity) : Companion{
 
@@ -37,8 +41,7 @@ class NetworkUtil{
             /**
              * Register a callback to handle network state.
              */
-            networkCallback = object : ConnectivityManager.NetworkCallback(){
-
+            networkCallback = object : NetworkCallback(){
 
                 override fun onAvailable(network: Network) {
                     super.onAvailable(network)
@@ -57,6 +60,8 @@ class NetworkUtil{
 
         /**
          * Start to observe the network connection.
+         *
+         * @since 0.2.1
          */
         fun observe(){
             connectivityManager.requestNetwork(networkRequest, networkCallback)

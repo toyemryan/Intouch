@@ -63,15 +63,18 @@ class MainActivity : AppCompatActivity() {
 
         val logout = PerformLogout()
 
+
         MainScope().launch(AppExceptionHandler.coroutineExThrower){
             var result : String?
+
+            logout(this@MainActivity)
 
             try{
                 val user = performLoginEmailPassword("test@intouchtest.com", "testtest")
                 result = "Utente autenticato"
             }
             catch (e : FirebaseNetworkException){
-                result = getString(R.string.internet_task_offline)
+                result = getString(R.string.internet_offline)
             }
             catch (e : FirebaseAuthInvalidCredentialsException){
                 result = getString(R.string.login_failed)
