@@ -1,4 +1,4 @@
-package com.diegusmich.intouch.domain.auth
+package com.diegusmich.intouch.data.domain.auth
 
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -14,6 +14,7 @@ import kotlinx.coroutines.tasks.await
  * @since 0.2.0
  */
 class PerformLoginEmailPassword(){
+
     /**
      * Perform the login with email and password.
      * @return FirebaseUser?

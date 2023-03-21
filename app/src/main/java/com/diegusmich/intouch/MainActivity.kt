@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.diegusmich.intouch.databinding.ActivityMainBinding
-import com.diegusmich.intouch.domain.auth.PerformLoginEmailPassword
-import com.diegusmich.intouch.domain.auth.PerformLogout
+import com.diegusmich.intouch.data.domain.auth.PerformLoginEmailPassword
+import com.diegusmich.intouch.data.domain.auth.PerformLogout
 import com.diegusmich.intouch.exceptions.AppExceptionHandler
 import com.diegusmich.intouch.utils.ActivityUtil
 import com.diegusmich.intouch.utils.NetworkUtil
@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {
         MainScope().launch(AppExceptionHandler.coroutineExThrower){
             var result : String?
 
-            logout(this@MainActivity)
 
             try{
                 val user = performLoginEmailPassword("test@intouchtest.com", "testtest")
