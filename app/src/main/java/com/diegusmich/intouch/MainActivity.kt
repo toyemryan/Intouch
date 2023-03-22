@@ -1,5 +1,6 @@
 package com.diegusmich.intouch
 
+import android.net.Network
 import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -8,7 +9,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.diegusmich.intouch.databinding.ActivityMainBinding
 import com.diegusmich.intouch.data.domain.auth.PerformLoginEmailPassword
-import com.diegusmich.intouch.data.domain.auth.PerformLogout
 import com.diegusmich.intouch.exceptions.AppExceptionHandler
 import com.diegusmich.intouch.utils.ActivityUtil
 import com.diegusmich.intouch.utils.NetworkUtil
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth : FirebaseAuth
-    private val performLoginEmailPassword = PerformLoginEmailPassword()
+    private var performLoginEmailPassword = PerformLoginEmailPassword()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,9 +62,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun processAuth() {
-
-        val logout = PerformLogout()
-
 
         MainScope().launch(AppExceptionHandler.coroutineExThrower){
             var result : String?

@@ -11,6 +11,6 @@ interface IModelSelfBuilder<T> {
     /**
      * Parse data and inflate all values to model.
      */
-    fun fromData(docData : (MutableMap<String, Any>)?) : T?
+    fun fromData(docData : (MutableMap<String, Any>)?) : T
 
 }

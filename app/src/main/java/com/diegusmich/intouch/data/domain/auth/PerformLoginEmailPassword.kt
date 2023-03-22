@@ -5,6 +5,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import dagger.Provides
 import kotlinx.coroutines.tasks.await
 
 /**
@@ -13,6 +14,7 @@ import kotlinx.coroutines.tasks.await
  *
  * @since 0.2.0
  */
+
 class PerformLoginEmailPassword(){
 
     /**

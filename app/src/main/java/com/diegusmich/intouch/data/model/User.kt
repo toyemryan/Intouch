@@ -3,8 +3,8 @@ package com.diegusmich.intouch.data.model
 /**
  * Represent User data as an immutable model. It implements IModelBuilder.
  *
- * @see com.diegusmich.intouch.data.model.IModelBuilder
- * @since 0.2.2
+ * @see com.diegusmich.intouch.data.model.IModelSelfBuilder
+ * @since 0.2.3
  */
 class User : IModelSelfBuilder<User> {
 
@@ -23,28 +23,28 @@ class User : IModelSelfBuilder<User> {
     var biography: String? = null
         private set
 
-    var profile_img: String? = null
+    var profileImgRef: String? = null
         private set
 
-    var friends: List<String>? = null
+    var friendsRef: List<String>? = null
         private set
 
     var preferences: List<String>? = null
         private set
 
-    var socials: MutableMap<String, String>? = null
+    var socials: Map<String, String>? = null
         private set
 
     override fun fromData(docData: (MutableMap<String, Any>)?): User {
-
         name = docData?.get("name").toString()
         surname = docData?.get("surname").toString()
+        username = docData?.get("username").toString()
         years = docData?.get("year") as Short?
         biography = docData?.get("biography").toString()
-        profile_img = docData?.get("profile_img").toString()
-        friends = docData?.get("friends") as List<String>
+        profileImgRef = docData?.get("profile_img").toString()
+        friendsRef = docData?.get("friends") as List<String>?
         preferences = docData?.get("preferences") as List<String>?
-        socials = docData?.get("socials") as MutableMap<String, String>?
+        socials = docData?.get("socials") as Map<String, String>?
 
         return this
     }
