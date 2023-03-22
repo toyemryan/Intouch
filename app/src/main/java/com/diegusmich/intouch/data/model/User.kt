@@ -39,7 +39,7 @@ class User : IModelSelfBuilder<User> {
         name = docData?.get("name").toString()
         surname = docData?.get("surname").toString()
         username = docData?.get("username").toString()
-        years = docData?.get("year") as Short?
+        years = (docData?.get("years") as Long?)?.toShort()
         biography = docData?.get("biography").toString()
         profileImgRef = docData?.get("profile_img").toString()
         friendsRef = docData?.get("friends") as List<String>?

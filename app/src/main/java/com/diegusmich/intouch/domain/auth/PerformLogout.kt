@@ -1,4 +1,4 @@
-package com.diegusmich.intouch.data.domain.auth
+package com.diegusmich.intouch.domain.auth
 
 import android.app.Activity
 import com.google.firebase.auth.ktx.auth

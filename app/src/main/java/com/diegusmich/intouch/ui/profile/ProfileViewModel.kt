@@ -4,6 +4,8 @@ import androidx.lifecycle.*
 import com.diegusmich.intouch.data.model.User
 import com.diegusmich.intouch.data.model.decorators.toModel
 import com.diegusmich.intouch.data.repository.UserRepository
+import com.diegusmich.intouch.domain.users.GetUser
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
@@ -11,7 +13,7 @@ import kotlinx.coroutines.tasks.await
 
 class ProfileViewModel : ViewModel() {
 
-    private val userRepo = UserRepository()
+    private val getUser = GetUser()
 
     private val _user = MutableLiveData<User>().apply {
         value = User()
@@ -26,16 +28,9 @@ class ProfileViewModel : ViewModel() {
     init{
         loadContent()
     }
-    fun loadContent(){
+    fun loadContent() {
         viewModelScope.launch {
-            _user.value = loadUser()
+            _user.value = getUser("yC0AlZtIpuPq9BMoeSGK4AelZzu1")
         }
-    }
-    suspend fun loadUser() : User?{
-        val docRef = Firebase.firestore.collection("utenti")
-            .document("6OcZOlXXpOVfFtgrCZlJ")
-            .get().await()
-
-        return docRef.toModel<User>()
     }
 }

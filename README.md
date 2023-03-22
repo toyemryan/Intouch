@@ -2,7 +2,7 @@
   <br><br>
   <img src="intouch_full_logo.svg" alt="Intouch_logo" width="260"></img>
   <br>
-  <h4>Versione attuale: 0.2.7 alpha</h4><br>
+  <h4>Versione attuale: 0.2.8 alpha</h4><br>
 </div><br><br>
 
 # Intouch App

@@ -1,4 +1,4 @@
-package com.diegusmich.intouch.data.domain.auth
+package com.diegusmich.intouch.domain.auth
 
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException

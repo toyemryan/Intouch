@@ -1,5 +1,7 @@
 package com.diegusmich.intouch.data.model
 
+
+//TODO: Definire la classe Notification
 /**
  * Represent Notification data as an immutable model. It implements IModelBuilder.
  *
