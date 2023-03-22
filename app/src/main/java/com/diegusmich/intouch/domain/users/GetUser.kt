@@ -8,7 +8,6 @@ class GetUser{
     var userRepo = UserRepository()
 
     suspend operator fun invoke(id : String) : User?{
-        userRepo.all()
         return userRepo.find(id)
     }
 }
