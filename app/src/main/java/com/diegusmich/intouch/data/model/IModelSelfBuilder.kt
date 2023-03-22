@@ -6,7 +6,7 @@ package com.diegusmich.intouch.data.model
  *
  * @since 0.2.2
  */
-interface IModelBuilder<T> {
+interface IModelSelfBuilder<T> {
 
     /**
      * Parse data and inflate all values to model.
