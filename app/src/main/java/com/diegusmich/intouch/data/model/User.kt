@@ -6,7 +6,7 @@ package com.diegusmich.intouch.data.model
  * @see com.diegusmich.intouch.data.model.IModelSelfBuilder
  * @since 0.2.3
  */
-class User : IModelSelfBuilder<User> {
+class User() : DataModel {
 
     var name: String? = null
         private set
@@ -35,7 +35,7 @@ class User : IModelSelfBuilder<User> {
     var socials: Map<String, String>? = null
         private set
 
-    override fun fromData(docData: (MutableMap<String, Any>)?): User {
+    override fun inflateData(docData: (MutableMap<String, Any>)?){
         name = docData?.get("name").toString()
         surname = docData?.get("surname").toString()
         username = docData?.get("username").toString()
@@ -45,7 +45,5 @@ class User : IModelSelfBuilder<User> {
         friendsRef = docData?.get("friends") as List<String>?
         preferences = docData?.get("preferences") as List<String>?
         socials = docData?.get("socials") as Map<String, String>?
-
-        return this
     }
 }
