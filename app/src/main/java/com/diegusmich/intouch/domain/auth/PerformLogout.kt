@@ -21,5 +21,6 @@ class PerformLogout(){
     operator fun invoke(ctx : Activity){
         Firebase.auth.signOut()
         ctx.finish()
+        TODO("Da completare")
     }
 }

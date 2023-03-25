@@ -5,8 +5,8 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import dagger.Provides
 import kotlinx.coroutines.tasks.await
+import javax.inject.Inject
 
 /**
  * Perform login with email and password. This class can be
@@ -15,7 +15,7 @@ import kotlinx.coroutines.tasks.await
  * @since 0.2.0
  */
 
-class PerformLoginEmailPassword(){
+class PerformLoginEmailPassword @Inject constructor(){
 
     /**
      * Perform the login with email and password.

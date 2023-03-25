@@ -8,9 +8,9 @@ package com.diegusmich.intouch.data.model
  * @see com.diegusmich.intouch.data.model.IModelSelfBuilder
  * @since 0.2.6
  */
-class Event : IModelSelfBuilder<Event>{
+class Event : DataModel{
 
-    override fun fromData(docData: MutableMap<String, Any>?): Event {
+    override fun inflateData(docData: MutableMap<String, Any>?){
         TODO("Implementare fromData")
     }
 

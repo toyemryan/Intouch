@@ -1,16 +1,15 @@
 package com.diegusmich.intouch.ui.profile
 
 import android.os.Bundle
-import android.provider.ContactsContract.Profile
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.diegusmich.intouch.R
 import com.diegusmich.intouch.databinding.FragmentProfileBinding
+
 
 class ProfileFragment : Fragment() {
 

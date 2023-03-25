@@ -6,7 +6,7 @@ package com.diegusmich.intouch.data.model
  * @see com.diegusmich.intouch.data.model.IModelSelfBuilder
  * @since 0.2.6
  */
-class Category() : IModelSelfBuilder<Category>{
+class Category() : DataModel{
 
     var name: String? = null
     private set
@@ -14,10 +14,8 @@ class Category() : IModelSelfBuilder<Category>{
     var color : String? = null
     private set
 
-    override fun fromData(docData: MutableMap<String, Any>?): Category {
+    override fun inflateData(docData: MutableMap<String, Any>?){
         name = docData?.get("name").toString()
         color = docData?.get("color").toString()
-
-        return this
     }
 }

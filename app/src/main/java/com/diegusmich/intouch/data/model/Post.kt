@@ -6,7 +6,7 @@ package com.diegusmich.intouch.data.model
  * @see com.diegusmich.intouch.data.model.IModelSelfBuilder
  * @since 0.2.5
  */
-class Post() : IModelSelfBuilder<Post>{
+class Post() : DataModel{
     var authorRef: String? = null
         private set
 
@@ -22,13 +22,11 @@ class Post() : IModelSelfBuilder<Post>{
     var albumImgRef: List<String>? = null
         private set
 
-    override fun fromData(docData: MutableMap<String, Any>?): Post {
+    override fun inflateData(docData: MutableMap<String, Any>?) {
         authorRef = docData?.get("author").toString()
         description = docData?.get("description").toString()
         eventRef = docData?.get("event").toString()
         likes = docData?.get("likes") as List<String>?
         albumImgRef = docData?.get("album") as List<String>?
-
-        return this
     }
 }

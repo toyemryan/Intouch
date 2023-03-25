@@ -8,9 +8,9 @@ package com.diegusmich.intouch.data.model
  * @see com.diegusmich.intouch.data.model.IModelSelfBuilder
  * @since 0.2.6
  */
-class Notification : IModelSelfBuilder<Notification> {
+class Notification : DataModel{
 
-    override fun fromData(docData: MutableMap<String, Any>?): Notification {
+    override fun inflateData(docData: MutableMap<String, Any>?){
         TODO("Implementare fromData()")
 
     }

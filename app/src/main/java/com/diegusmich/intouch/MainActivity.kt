@@ -1,6 +1,5 @@
 package com.diegusmich.intouch
 
-import android.net.Network
 import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -9,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.diegusmich.intouch.databinding.ActivityMainBinding
 import com.diegusmich.intouch.domain.auth.PerformLoginEmailPassword
+import com.diegusmich.intouch.domain.users.GetUser
 import com.diegusmich.intouch.exceptions.AppExceptionHandler
 import com.diegusmich.intouch.utils.ActivityUtil
 import com.diegusmich.intouch.utils.NetworkUtil
@@ -19,22 +19,21 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth : FirebaseAuth
-    private var performLoginEmailPassword = PerformLoginEmailPassword()
+    private val performLoginEmailPassword = PerformLoginEmailPassword()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         ActivityUtil.setFullScreen(this)
         NetworkUtil.buildService(this).observe()
+
 
         // Binding e setContentView
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -62,10 +61,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun processAuth() {
-
         MainScope().launch(AppExceptionHandler.coroutineExThrower){
             var result : String?
-
 
             try{
                 val user = performLoginEmailPassword("test@intouchtest.com", "testtest")
