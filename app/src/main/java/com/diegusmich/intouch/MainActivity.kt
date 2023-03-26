@@ -1,5 +1,6 @@
 package com.diegusmich.intouch
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -8,8 +9,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.diegusmich.intouch.databinding.ActivityMainBinding
 import com.diegusmich.intouch.domain.auth.PerformLoginEmailPassword
-import com.diegusmich.intouch.domain.users.GetUser
 import com.diegusmich.intouch.exceptions.AppExceptionHandler
+import com.diegusmich.intouch.ui.auth.AuthActivity
 import com.diegusmich.intouch.utils.ActivityUtil
 import com.diegusmich.intouch.utils.NetworkUtil
 import com.google.android.material.snackbar.Snackbar
@@ -57,7 +58,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        processAuth()
+
+        startActivity(Intent(this, AuthActivity::class.java))
+        //processAuth()
     }
 
     fun processAuth() {

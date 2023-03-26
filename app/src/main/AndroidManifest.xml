@@ -39,6 +39,13 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".ui.auth.AuthActivity"
+            android:exported="true"
+            android:label="@string/title_activity_auth"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

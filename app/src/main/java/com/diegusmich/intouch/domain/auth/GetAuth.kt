@@ -14,7 +14,7 @@ class GetAuth{
         if(Firebase.auth.currentUser == null)
             return null
 
-        val user = getUser(Firebase.auth.uid.toString())
+        val user = getUser(Firebase.auth.currentUser?.uid.toString())
 
         return Auth(user)
     }
