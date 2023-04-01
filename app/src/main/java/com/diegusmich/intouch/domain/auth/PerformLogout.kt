@@ -19,8 +19,11 @@ class PerformLogout(){
      * @since 0.2.0
      */
     operator fun invoke(ctx : Activity){
+        //Logout logged user
         Firebase.auth.signOut()
+
+        //Restart main activity
         ctx.finish()
-        TODO("Da completare")
+        ctx.startActivity(ctx.intent)
     }
 }

@@ -10,7 +10,7 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 class AppExceptionHandler{
 
     companion object{
-        val coroutineExThrower = CoroutineExceptionHandler{ _, exception ->
+        val coroutineThrower = CoroutineExceptionHandler{ _, exception ->
             throw exception
         }
     }

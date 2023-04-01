@@ -1,12 +1,14 @@
 package com.diegusmich.intouch.utils
 
 import android.app.Activity
+import android.content.Context
 import android.net.ConnectivityManager
 import android.net.ConnectivityManager.NetworkCallback
 import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
 import android.widget.Toast
+import com.diegusmich.intouch.IntouchApp
 import com.diegusmich.intouch.R
 
 /**
@@ -18,6 +20,7 @@ class NetworkUtil{
 
     companion object{
 
+        private lateinit var appRef : IntouchApp
         private lateinit var connectivityManager : ConnectivityManager
         private lateinit var networkRequest: NetworkRequest
         private lateinit var networkCallback : NetworkCallback
@@ -26,9 +29,11 @@ class NetworkUtil{
          * Build the entire service to observe a network.
          *
          * @param ctx context
-         * @since 0.2.1
          */
-        fun buildService(ctx : Activity) : Companion{
+        fun buildService(ctx : Context) : Companion{
+
+            //Get application reference
+            appRef = ctx.applicationContext as IntouchApp
 
             //Get a connectivity manager API to observe network state
             connectivityManager = ctx.getSystemService(ConnectivityManager::class.java) as ConnectivityManager
@@ -45,13 +50,14 @@ class NetworkUtil{
 
                 override fun onAvailable(network: Network) {
                     super.onAvailable(network)
-                    Toast.makeText(ctx, ctx.getString(R.string.internet_online), Toast.LENGTH_SHORT).show()
 
+                    showNetworkStatus(ctx, R.string.internet_online)
                 }
 
                 override fun onLost(network: Network) {
                     super.onLost(network)
-                    Toast.makeText(ctx, ctx.getString(R.string.internet_offline), Toast.LENGTH_SHORT).show()
+
+                    showNetworkStatus(ctx, R.string.internet_offline)
                 }
             }
 
@@ -60,11 +66,23 @@ class NetworkUtil{
 
         /**
          * Start to observe the network connection.
-         *
-         * @since 0.2.1
          */
         fun observe(){
             connectivityManager.requestNetwork(networkRequest, networkCallback)
+        }
+
+
+        /**
+         * Show a toast message with network status
+         *
+         * @param ctx Context
+         * @param strRes string resource ID
+         *
+         * o show
+         */
+        private fun showNetworkStatus(ctx : Context, strRes : Int){
+            if(appRef.isAppForeground())
+                Toast.makeText(ctx, ctx.getString(strRes), Toast.LENGTH_SHORT).show()
         }
     }
 }

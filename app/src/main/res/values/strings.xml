@@ -9,24 +9,29 @@
     <!-- Internet connection -->
     <string name="internet_offline">Connessione internet persa</string>
     <string name="internet_online">Connesso a internet</string>
+
     <!--Login strings -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
+    <string name="prompt_email">Inserisci email</string>
+    <string name="prompt_password">Inserisci password</string>
     <string name="action_sign_in">Accedi o registrati</string>
     <string name="action_sign_in_short">Accedi</string>
+    <string name="login_temp_banned">Blocco temporaneo per attività insolite. Riprova più tardi</string>
     <string name="welcome">"Benvenuto!"</string>
-    <string name="invalid_username">Username non valido</string>
+    <string name="invalid_user">Nessun utente è associato a questa email</string>
+    <string name="invalid_email">Formato email non valido</string>
     <string name="invalid_password">La password deve contentere almeno 8 caratteri</string>
-    <string name="login_failed">"Impossibile eseguire l'accesso. Controlla le credenziali"</string>
+    <string name="login_failed">"Impossibile eseguire l'accesso, controlla le credenziali."</string>
     <string name="text_gdpr_consent">Utilizzando l\'app acconsenti al trattamento dei dati personali secondo le norme del GDPR</string>
+
+
+    <string name="generic_error">Si è verificato un problema. Riprova più tardi</string>
+
     <!-- Strings used for fragments for navigation -->
-    <string name="greetings">Benvenuto!</string>
     <string name="signin_text_description">Condividi le tue passioni con nuovi amici e regalati momenti indimenticabili con Intouch.</string>
     <string name="fragment_auth_signin_title">Accedi</string>
     <string name="fragment_auth_signup_title">Registrati</string>
     <string name="next">Avanti</string>
     <string name="previous">Dietro</string>
     <string name="title_activity_auth">Accedi o Registrati</string>
-    <string name="password_hint_input">Inserisci password</string>
-    <string name="email_hint_input">Inserisci email</string>
+    <string name="fragment_auth_intro_title">Benvenuto!</string>
 </resources>

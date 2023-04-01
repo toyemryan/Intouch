@@ -10,6 +10,7 @@ import com.diegusmich.intouch.databinding.FragmentEventsBinding
 
 class EventsFragment : Fragment() {
 
+    private lateinit var eventsViewModel : EventsViewModel
     private var _binding: FragmentEventsBinding? = null
 
     // This property is only valid between onCreateView and
@@ -21,13 +22,11 @@ class EventsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val eventsViewModel =
-            ViewModelProvider(this).get(EventsViewModel::class.java)
 
+        eventsViewModel = ViewModelProvider(this).get(EventsViewModel::class.java)
         _binding = FragmentEventsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {

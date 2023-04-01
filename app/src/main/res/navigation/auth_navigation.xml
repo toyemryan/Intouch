@@ -3,23 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/auth_navigation"
-    app:startDestination="@id/FragmentSignIn">
+    app:startDestination="@id/FragmentIntro">
+
+    <fragment
+        android:id="@+id/FragmentIntro"
+        android:name="com.diegusmich.intouch.ui.auth.intro.IntroFragment"
+        android:label="@string/fragment_auth_intro_title"
+        tools:layout="@layout/fragment_auth_intro">
+
+        <action
+            android:id="@+id/action_Intro_to_SignIn"
+            app:destination="@id/FragmentSignIn"
+            app:enterAnim="@anim/slide_from_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/FragmentSignIn"
         android:name="com.diegusmich.intouch.ui.auth.signin.SignInFragment"
-        android:label="@string/fragment_auth_signin_title"
+        android:label=""
         tools:layout="@layout/fragment_auth_signin">
 
         <action
             android:id="@+id/action_SignIn_to_SignUp"
-            app:destination="@id/FragmentSignUp" />
+            app:destination="@id/FragmentSignUp"
+            app:enterAnim="@anim/slide_from_right"
+            />
+
+        <action
+            android:id="@+id/action_SignIn_to_Intro"
+            app:destination="@id/FragmentIntro"
+            app:enterAnim="@anim/slide_from_left"
+            />
     </fragment>
 
     <fragment
         android:id="@+id/FragmentSignUp"
         android:name="com.diegusmich.intouch.ui.auth.signup.SignUpFragment"
-        android:label="@string/fragment_auth_signup_title"
+        android:label=""
         tools:layout="@layout/fragment_auth_signup">
 
         <action

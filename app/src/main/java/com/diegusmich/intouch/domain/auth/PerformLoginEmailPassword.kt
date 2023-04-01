@@ -1,6 +1,8 @@
 package com.diegusmich.intouch.domain.auth
 
+import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseNetworkException
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -15,7 +17,7 @@ import javax.inject.Inject
  * @since 0.2.0
  */
 
-class PerformLoginEmailPassword @Inject constructor(){
+class PerformLoginEmailPassword{
 
     /**
      * Perform the login with email and password.
@@ -24,10 +26,8 @@ class PerformLoginEmailPassword @Inject constructor(){
      * @throws FirebaseAuthInvalidCredentialsException
      * @since 0.2.0
      */
-    suspend operator fun invoke(email : String, password : String) : FirebaseUser? {
-        val authResult = Firebase.auth.signInWithEmailAndPassword(email, password)
+    suspend operator fun invoke(email : String, password : String) : AuthResult {
+        return Firebase.auth.signInWithEmailAndPassword(email, password)
             .await()
-
-        return authResult.user
     }
 }

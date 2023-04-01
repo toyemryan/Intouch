@@ -5,6 +5,7 @@ import com.diegusmich.intouch.data.model.decorators.toModel
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.ktx.toObject
 import kotlinx.coroutines.tasks.await
 /**
  * Define a Repository object that manage data
